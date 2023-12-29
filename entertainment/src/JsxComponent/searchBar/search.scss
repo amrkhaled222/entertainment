@@ -1,0 +1,44 @@
+@use "../../sass/index.scss" as var;
+.searchBar {
+	align-items: flex-start;
+	display: flex;
+	gap: 24px;
+	margin: 52px auto 0 !important;
+	form {
+		padding: 8px 0 0 0;
+		width: 80%;
+	}
+	input {
+		background-color: transparent;
+		color: rgba(241, 225, 225, 0.507);
+		border: none;
+		outline: none;
+		width: 100%;
+
+		font-size: 24px;
+		font-weight: 300;
+		&:focus {
+			border-bottom: 1px solid white;
+			outline: none;
+			caret-color: var.$Red;
+			text-decoration: none;
+			color: white;
+		}
+	}
+}
+@include var.breakpoints("small") {
+	.searchBar {
+		margin: auto !important;
+		input {
+			font-size: 16px;
+		}
+	}
+}
+@include var.breakpoints("mobile") {
+	.searchBar {
+		margin: auto !important;
+		input {
+			font-size: 16px;
+		}
+	}
+}

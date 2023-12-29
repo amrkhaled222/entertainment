@@ -1,0 +1,124 @@
+@use "../../sass/index.scss" as var;
+
+.movie {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	max-width: 280px;
+	justify-self: center;
+	&__img {
+		position: relative;
+		height: 174px;
+		&__playing {
+			width: 100%;
+			height: 100%;
+			top: 0;
+			right: 0;
+			position: absolute;
+			justify-content: center;
+			align-items: center;
+			z-index: 3;
+			cursor: pointer;
+			border-radius: 8px;
+			background: linear-gradient(
+				0deg,
+				rgba(0, 0, 0, 0.5) 0%,
+				rgba(0, 0, 0, 0.5) 100%
+			);
+			button {
+				border: none;
+				background: #b4aeae54;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 19px;
+				padding: 9px 24px 9px 9px;
+				border-radius: 30px;
+				text-transform: capitalize;
+				cursor: pointer;
+			}
+		}
+		.filmImge {
+			width: 100%;
+			height: 100%;
+			border-radius: 8px;
+		}
+		&--BookmarkIcon {
+			position: absolute;
+			z-index: 4;
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			border: none;
+			outline: none;
+			top: 16px;
+			right: 16px;
+			background-color: #00000059;
+
+			cursor: pointer;
+			img {
+				width: 12px;
+				height: 14px;
+			}
+		}
+	}
+	&__data {
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: normal;
+		opacity: 0.75;
+		display: flex;
+		gap: 17px;
+		align-items: center;
+		margin: 0;
+		span {
+			position: relative;
+			img {
+				margin: 0 8px 0 0;
+			}
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				height: 3px;
+				width: 3px;
+				background-color: white;
+				opacity: 0.75;
+				border-radius: 50%;
+			}
+			&::after {
+				left: -9px;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+			&::before {
+				right: -9px;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+	h2 {
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0;
+	}
+}
+@include var.breakpoints("small") {
+	.movie {
+		max-width: 220px;
+	}
+}
+@include var.breakpoints("mobile") {
+	.movie {
+		max-width: 164px;
+		&__data {
+			font-size: 11px;
+		}
+		h2 {
+			font-size: 14px;
+			font-weight: 500;
+		}
+	}
+}

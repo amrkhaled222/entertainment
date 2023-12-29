@@ -1,0 +1,20 @@
+@use "../mixin/index.scss" as var;
+.layout {
+	max-width: 1440px;
+	display: grid;
+	margin: auto;
+	grid-template-columns: 160px calc(100% - 160px);
+}
+@include var.breakpoints("small") {
+	.layout {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+@include var.breakpoints("mobile") {
+	.layout {
+		display: flex;
+		flex-direction: column;
+	}
+}

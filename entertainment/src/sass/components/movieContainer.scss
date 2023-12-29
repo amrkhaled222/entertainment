@@ -1,0 +1,20 @@
+@use "../mixin/index.scss" as x;
+.movieContainer {
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-columns: repeat(auto-fill, 280px);
+	gap: 32px 40px;
+	padding: 0 0 36px;
+}
+@include x.breakpoints("small") {
+	.movieContainer {
+		grid-template-columns: repeat(auto-fill, 220px);
+		gap: 29px 24px;
+	}
+}
+@include x.breakpoints("mobile") {
+	.movieContainer {
+		grid-template-columns: repeat(auto-fill, 163px);
+		gap: 15px 16px;
+	}
+}

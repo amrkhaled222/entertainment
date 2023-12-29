@@ -1,0 +1,27 @@
+@mixin breakpoints($points) {
+	@if ($points == "mobile") {
+		@media (max-width: 600px) {
+			@content;
+		}
+	} @else if ($points== "small") {
+		@media (min-width: 600px) and (max-width: 796px) {
+			@content;
+		}
+	} @else if($points== "medium") {
+		@media (min-width: 796px) and (max-width: 992px) {
+			@content;
+		}
+	} @else if($points== "Large") {
+		@media (min-width: 992px) and (max-width: 1200px) {
+			@content;
+		}
+	} @else if($points== "X-Large") {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	} @else if($points== "XX-Large") {
+		@media (min-width: 1440px) {
+			@content;
+		}
+	}
+}

@@ -1,0 +1,66 @@
+@use "../mixin" as *;
+@use "../variable/index.scss" as var;
+//fonts
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+* {
+	font-family: "Outfit", sans-serif !important;
+	color: white;
+}
+.container {
+	margin: auto;
+}
+main {
+	background-color: var.$Dark-Blue;
+	min-height: 100vh;
+}
+//header for evrey section
+.sectionheader {
+	color: #fff;
+	font-feature-settings: "clig" off, "liga" off;
+	font-family: Outfit;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.5px;
+}
+// @include breakpoints("X-Large") {
+// 	.container {
+// 		max-width: 1050px;
+// 	}
+// }
+// @include breakpoints("XX-Large") {
+// 	.container {
+// 		max-width: 1280px;
+// 	}
+// }
+// @include breakpoints("Large") {
+// 	.container {
+// 		max-width: 930px;
+// 	}
+// }
+
+@include breakpoints("mobile") {
+	.sectionheader {
+		font-size: 20px;
+	}
+	.container {
+		width: 100%;
+		padding: 16px;
+	}
+}
+@include breakpoints("small") {
+	.container {
+		width: 100%;
+		padding: 10px 25px;
+	}
+}
+@include breakpoints("medium") {
+	.container {
+		width: 100%;
+	}
+}

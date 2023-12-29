@@ -1,0 +1,155 @@
+@use "../../sass/index.scss" as var;
+
+.slide {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+	width: 470px;
+	height: 230px;
+	gap: 8px;
+	padding: 24px;
+	border-radius: 8px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	&__overlay {
+		width: 100%;
+		height: 100%;
+		top: 0;
+		right: 0;
+		position: absolute;
+		justify-content: center;
+		align-items: center;
+		z-index: 3;
+		cursor: pointer;
+		border-radius: 8px;
+		background: linear-gradient(
+			0deg,
+			rgba(0, 0, 0, 0.5) 0%,
+			rgba(0, 0, 0, 0.5) 100%
+		);
+		button {
+			border: none;
+			background: #b4aeae54;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 19px;
+			padding: 9px 24px 9px 9px;
+			border-radius: 30px;
+			text-transform: capitalize;
+			cursor: pointer;
+		}
+	}
+	&__bookmarkButton {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		position: absolute;
+		z-index: 4;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		border: none;
+		outline: none;
+		top: 16px;
+		right: 16px;
+		background-color: #00000059;
+
+		cursor: pointer;
+	}
+
+	&__data {
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 300;
+		line-height: normal;
+		opacity: 0.75;
+		display: flex;
+		gap: 17px;
+		align-items: center;
+		margin: 0;
+		span {
+			position: relative;
+			display: flex;
+			align-items: center;
+			img {
+				margin: 0 8px 0 0;
+			}
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				height: 3px;
+				width: 3px;
+				background-color: white;
+				opacity: 0.75;
+				border-radius: 50%;
+			}
+			&::after {
+				left: -9px;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+			&::before {
+				right: -9px;
+				top: 50%;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+	h2 {
+		font-size: 18px;
+		font-weight: 500;
+		margin: 0;
+	}
+}
+@include var.breakpoints("small") {
+	.sliderr {
+		padding: 0 0 0 25px;
+		.slide {
+			.mobile__rating {
+				display: none;
+			}
+		}
+	}
+}
+@include var.breakpoints("mobile") {
+	.sliderr {
+		padding: 0 0 0 16px;
+		.slide {
+			position: relative;
+			width: 94%;
+			max-width: 240px;
+			padding: 16px;
+			height: 140px;
+			&__data {
+				font-size: 12px;
+				span {
+					&::before {
+						display: none;
+					}
+				}
+			}
+			h2 {
+				font-size: 15px;
+			}
+			.mobile__rating {
+				position: absolute;
+				width: 37px;
+				height: 21px;
+				right: 27px;
+				bottom: 27px;
+				font-size: 13px;
+				background-color: rgba(255, 255, 255, 0.15);
+				border-radius: 10.5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
+}

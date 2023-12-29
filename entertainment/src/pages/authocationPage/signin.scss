@@ -1,0 +1,91 @@
+@use "../../sass/index.scss" as var;
+.container.signin,
+.container.signup {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	min-height: 100vh;
+	background-color: #10141e;
+	gap: 84px;
+	padding: 80px;
+	form {
+		width: 400px;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		background-color: var.$Semi-Dark-Blue;
+		padding: 30px 32px;
+		border-radius: 20px;
+		h1 {
+			font-feature-settings: "clig" off, "liga" off;
+			font-size: 32px;
+			font-weight: 300;
+			line-height: normal;
+			letter-spacing: -0.5px;
+			margin: 0 0 16px;
+			text-transform: capitalize;
+		}
+		.inputContainer {
+			position: relative;
+		}
+		.validationmassege {
+			color: var.$Red;
+			position: absolute;
+			display: block;
+			font-size: 13px;
+			font-weight: 300;
+			right: 0;
+			bottom: 8px;
+		}
+		.signinValidation {
+			color: var.$Red;
+			font-size: 13px;
+		}
+		button {
+			margin: 16px 0 0;
+			&.signinbutton--facebook {
+				background-color: #4267b2;
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 2px;
+				img {
+					width: 40px;
+				}
+			}
+			&.signinbutton--Google {
+				background-color: white;
+				color: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 16px;
+				img {
+					width: 24px;
+				}
+			}
+		}
+		p {
+			text-align: center;
+			font-size: 15px;
+			font-weight: 300;
+			margin: 0;
+			a {
+				margin: 0 0 0 9px;
+				color: var.$Red;
+			}
+		}
+	}
+}
+@include var.breakpoints("mobile") {
+	.container.signin,
+	.container.signup {
+		padding: 2rem 1rem;
+		gap: 54px;
+		form {
+			max-width: 327px;
+		}
+	}
+}
