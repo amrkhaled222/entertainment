@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import React, { useEffect, useState } from "react";
-import Slide from "../../JsxComponent/slide/slide";
+import Slide from "../../JsxComponent/slide/Slide";
 import SearchBar from "../../JsxComponent/searchBar/Search";
 import { nanoid } from "nanoid";
 //make request to trending and all movie and tv series here
